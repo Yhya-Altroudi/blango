@@ -52,6 +52,7 @@ class Dev(Configuration):
         'django.contrib.staticfiles',
         "crispy_forms",
         "crispy_bootstrap5",
+        "blango_auth",
         "blog",
         "debug_toolbar",
     ]
@@ -170,6 +171,9 @@ class Dev(Configuration):
     
     # DJDT Allowed IPs
     INTERNAL_IPS = ["192.168.10.93"]
+
+    # Add custom user authentication models
+    AUTH_USER_MODEL = "blango_auth.User" 
 
 class Prod(Dev):
   DEBUG = False
