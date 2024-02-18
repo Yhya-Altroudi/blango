@@ -175,6 +175,14 @@ class Dev(Configuration):
     # Add custom user authentication models
     AUTH_USER_MODEL = "blango_auth.User" 
 
+    # Add Email backend
+    EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+
+    # Account activation period
+    ACCOUNT_ACTIVATION_DAYS = 7
+
+    # uncomment this to disable registration
+    #REGISTRATION_OPEN = False
 class Prod(Dev):
   DEBUG = False
   SECRET_KEY = values.SecretValue()
